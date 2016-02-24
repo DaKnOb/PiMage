@@ -17,6 +17,7 @@ piv = piv[2:]
 
 # Calculate Image Dimensions
 pilen = len(piv)
+pilen = int(pilen/9)
 pilen = sqrt(pilen)
 pilen = int(pilen)
 
@@ -24,10 +25,17 @@ pilen = int(pilen)
 img = Image.new( 'RGB', (pilen, pilen), "black")
 pixels = img.load()
 
-# Randomize all pixels
-for i in range(img.size[0]):
-    for j in range(img.size[1]):
-        pixels[i,j] = (randint(0,255), randint(0,255), randint(0,255))
+# Run through the entire Pi and calculate RGB values
+for i in xrange(0,(pilen*pilen*9),9):
+	red = piv[i:i+3]
+	green = piv[i+3:i+6]
+	blue = piv[i+6:i+9]
+	red = int(red) % 256
+	green = int(green) % 256
+	blue = int(blue) % 256
+	# Add color to the image
+	pixels[(i / 9) % pilen, int(i / 9 / pilen)] = (red, green, blue)
 
 # Open the image
 img.show()
+img.save("output/pi-" + PI_DIGITS_FILE.replace("/", "-") + ".png")
