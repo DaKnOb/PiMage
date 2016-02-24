@@ -1,3 +1,7 @@
+# OSX + Vim
+*.swp
+*.DS_Store
+
 # VirtualEnv
 bin
 lib
