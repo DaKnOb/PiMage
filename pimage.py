@@ -5,7 +5,7 @@ from PIL import Image
 from random import randint
 from math import sqrt
 
-PI_DIGITS_FILE = "pi/100000.txt"
+PI_DIGITS_FILE = "pi/1000000.txt"
 
 # Open file
 pi = open(PI_DIGITS_FILE, "r")
