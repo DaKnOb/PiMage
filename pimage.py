@@ -26,8 +26,13 @@ pixels = img.load()
 
 # Run through the entire Pi and calculate RGB values
 for i in xrange(0,pilen*pilen):
-	Color = int(int(piv[i]) * 28) 
-	pixels[i % pilen, int( i / pilen )] = (Color, Color, Color)
+	Color = int(int(piv[i]) * 28)
+	if(i%3 == 0):
+		pixels[i % pilen, int( i / pilen )] = (Color, 0, 0)
+	elif(i%3 == 1):
+		pixels[i % pilen, int( i / pilen )] = (0, Color, 0)
+	else:
+		pixels[i % pilen, int( i / pilen )] = (0, 0, Color)
 
 # Open the image
 img.show()

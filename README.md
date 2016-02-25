@@ -6,9 +6,12 @@ Pi to as many decimal digits as possible and then will generate an image where e
 pixel is colored based on its digits.
 
 ## How are colors calculated:
-All colors are grayscale which means their Red, Green, and Blue values are equal. The
-value is calculated by multiplying each digit by 28. For example, the digit 0 becomes
-`(0,0,0)`, the digit 1 becomes `(28,28,28)` and the digit 9 becomes `(252,252,252)`.
+Each pixel is either colored in a shade of Red, Green, or Blue in sequential order.
+That means the first pixel is colored in a shade of Red, the second in a shade of Green,
+the third in a shade of Blue, etc. The shade of the color is determined by a single digit
+of pi multiplied by 28. That means the first digit, which is 1, it will be colored with
+`(28,0,0)`, the second digit, a 4, will be colored with `(0,112,0)`, and the third digit,
+which is again an 1, will be colored with `(0,0,28)`.
 
 ## Example Outputs
 The first 100,000 digits of Pi:
