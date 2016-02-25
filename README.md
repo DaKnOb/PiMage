@@ -7,8 +7,8 @@ pixel is colored based on its digits.
 
 ## How are colors calculated:
 All colors are grayscale which means their Red, Green, and Blue values are equal. The
-value is calculated by multiplying each digit by 20. For example, the digit 0 becomes
-`(0,0,0)`, the digit 1 becomes `(20,20,20)` and the digit 9 becomes `(180,180,180)`.
+value is calculated by multiplying each digit by 28. For example, the digit 0 becomes
+`(0,0,0)`, the digit 1 becomes `(28,28,28)` and the digit 9 becomes `(252,252,252)`.
 
 ## Example Outputs
 The first 100,000 digits of Pi:
